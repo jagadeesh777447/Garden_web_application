@@ -1,0 +1,61 @@
+include ../layer/_layer
+include ../price/_price
+
+// Ticket Prices
+section.section.section-7.position-relative.overflow-hidden( style='background-color: #415ADE' )
+	.section-layer: +layer-7
+	.container-wide
+		.row.justify-content-center
+			.col-xs-8.col-sm-7.col-md-9.col-lg-10.col-xl-9.col-xxl-7.offset-xxl-2.section-content-3( data-animate!={
+				in: { class: 'fadeInUpBig', delay: '.7s', duration: '.7s' },
+				out: { class: 'fadeOutUpBig', delay: '0s', duration: '.4s' } } )
+				h2.text-center.d-mobile-landscape-none Ticket Prices
+				.owl-carousel.owl-style-1( data-owl= {
+					items: 1,
+					margin: 30,
+					loop: false,
+					mouseDrag: false,
+					nav: true,
+					autoplay: false,
+					responsive: {
+						768: {
+							items: 2
+						},
+						992: {
+							items: 3
+						}
+					}
+				})
+					+price({
+						title: 'Tickets',
+						lists: [
+							{ text: 'Children <br class="d-none d-md-block">(4 to 7 years old)', value: '$8/pers.' },
+							{ text: 'Adults', value: '$15/pers.' },
+							{ text: 'Students', value: '$12/pers.' },
+							{ text: 'Seniors', value: '$10/pers.' }
+						],
+						text: '<strong>Free for:</strong> <br class="d-none d-md-block">Children up to 3 years'
+					})
+					+price({
+						title: 'Excursions',
+						lists: [
+							{ text: 'Group <br class="d-none d-md-block">(3-7 people)', value: '$10/pers.' },
+							{ text: 'Individual <br class="d-none d-md-block">(1-2 people)', value: '$20/pers.' },
+							{ text: 'Children', value: '$7/pers.' }
+						],
+						text: '<strong>Additionally:</strong> <br class="d-none d-md-block">Ticket purchase is required'
+					})
+					+price({
+						title: 'Audio Guides',
+						lists: [
+							{ text: 'Adult Program (1h)', value: '$8' },
+							{ text: 'Teen Program (30m)', value: '$5' },
+							{ text: 'Children’s Program', value: '12' },
+							{ text: 'Encyclopedia', value: '$10' }
+						],
+						text: '<strong>Free for:</strong> <br class="d-none d-md-block">Children up to 3 years'
+					})
+			.col-xs-4.col-sm-3.col-md-2.position-static.d-flex.align-items-center.px-0.section-figure
+				+img( 'image-12-534x825.png' ).section-image( data-animate!={
+					in: { class: 'slideInRight', delay: '.7s', duration: '.7s' },
+					out: { class: 'slideOutRight', delay: '0s', duration: '.4s' } } )

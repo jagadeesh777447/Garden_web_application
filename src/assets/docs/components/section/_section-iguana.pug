@@ -1,0 +1,19 @@
+include ../layer/_layer
+
+// Section Iguana
+section.section.section-1.position-relative.overflow-hidden( style='background-color: #72B805' )
+	.section-layer: +layer-1
+	.container-wide
+		.row.row-30.section-row
+			.col-xs-8.col-sm-7.col-md-6.section-content( data-animate!={
+				in: { class: 'fadeInUpBig', delay: '.3s' },
+				out: { class: 'fadeOutUpBig', delay: '.3s' } } )
+				h1 Discover The Beautiful World of Wild Nature
+				p.lead Welcome to Bonobomb Zoo, home to a wide range of exotic animals, insects, birds, and a lot of other animal groups. Buy a ticket to our zoo and discover the variety of nature today!
+				.offset-md.group-20.group-md-30
+					a.btn.btn-round.btn-lg.btn-primary.btn-anis( href='#' ) Buy Ticket
+					a.btn.btn-outline.btn-round.btn-lg.btn-anis( href='#' ) Learn More
+			.col-xs-4.col-sm-5.col-md-6.position-static.d-flex.align-items-center.px-0.section-figure
+				+img( 'image-1-1049x897.png' ).section-image( data-animate!={
+					in: { class: 'slideInRight', delay: '.8s', duration: '.7s' },
+					out: { class: 'slideOutRight', delay: '0s', duration: '.4s' } } )

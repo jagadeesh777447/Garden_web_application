@@ -1,0 +1,275 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+.layer {
+	position: absolute;
+	width: auto;
+	height: 100%;
+	flex: 0 0 auto;
+}
+
+.section-layer {
+	position: absolute;
+	display: flex;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	pointer-events: none;
+}
+
+.section-image {
+	position: absolute;
+	pointer-events: none;
+}
+
+
+// Section 1
+.section-1 {
+	.section-layer {
+		justify-content: flex-end;
+	}
+
+	.layer {
+		height: 95.55%;
+	}
+
+	.section-image {
+		right: 0;
+		width: 44%;
+	}
+}
+
+
+// Section 2
+.section-2 {
+	.section-row {
+		flex-direction: row-reverse;
+	}
+
+	.section-image {
+		bottom: 0;
+		width: 37.45%;
+	}
+}
+
+
+// Section 3
+.section-3 {
+	.section-layer {
+		justify-content: flex-end;
+	}
+
+	.layer {
+		height: 95.55%;
+	}
+
+	.section-image {
+		right: 0;
+		width: 48.85%;
+	}
+}
+
+
+// Section 4
+.section-4 {
+	.section-layer {
+		left: auto;
+		right: -5.73%;
+		justify-content: flex-end;
+	}
+}
+
+
+// Section 5
+.section-5 {
+	.section-row {
+		flex-direction: row-reverse;
+	}
+
+	.section-image {
+		bottom: 0;
+		left: 0;
+		width: 34.48%;
+	}
+}
+
+// Section 6
+.section-6 {
+	.section-layer {
+		justify-content: center;
+	}
+}
+
+// Section 7
+.section-7 {
+	.section-layer {
+		justify-content: center;
+	}
+
+	.section-image {
+		right: 0;
+		width: 25%;
+	}
+}
+
+.section-8 {
+	.section-layer {
+		justify-content: flex-end;
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(md) {
+	.section-1 {
+		.section-image {
+			width: 54.64%;
+		}
+	}
+
+	.section-5 {
+		.section-image {
+			left: 5%;
+		}
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	// Section 7
+	.section-7 {
+		.section-image {
+			width: 27.8125%;
+		}
+	}
+}
+
+@media ( orientation: portrait ) {
+	[ class*='section-' ] .section-layer {
+		justify-content: center;
+	}
+
+	.section-figure {
+		max-width: 100%;
+		flex-basis: 100%;
+		padding-bottom: 40%;
+	}
+
+	.section-content {
+		max-width: 450px;
+		flex-basis: 450px;
+	}
+
+	.section-1,
+	.section-3 {
+		.section-layer {
+			left: -15%;
+		}
+
+		.section-image {
+			width: 70%;
+			bottom: 0;
+		}
+	}
+
+	.section-2 {
+		.section-layer {
+			left: -15%;
+			justify-content: flex-start;
+		}
+
+		.section-row {
+			flex-direction: row;
+		}
+
+		.section-image {
+			width: 45%;
+		}
+	}
+
+	.section-4 {
+		.section-layer {
+			right: auto;
+			left: 0;
+		}
+	}
+
+	.section-5 {
+		.section-layer {
+			left: -20%;
+			justify-content: flex-start;
+		}
+
+		.section-row {
+			flex-direction: row;
+		}
+
+		.section-image {
+			width: 50%;
+			left: auto;
+		}
+	}
+
+	.section-7 {
+		.section-layer {
+			left: -15%;
+			justify-content: flex-start;
+		}
+
+		.section-image {
+			width: 37%;
+			bottom: 0;
+		}
+	}
+
+	@media( min-width: 480px ) {
+		.section-figure {
+			padding-bottom: 56%;
+		}
+
+		.section-content-2,
+		.section-content-3 {
+			max-width: 100%;
+			flex: 0 0 100%;
+		}
+
+		.section-1,
+		.section-3 {
+			.section-image {
+				width: 80%;
+			}
+		}
+
+		.section-2 {
+			.section-image {
+				width: 50%;
+			}
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		.section-content-2 {
+			max-width: (8/12)*100%;
+			flex: 0 0 (8/12)*100%;
+		}
+
+		.section-content-3 {
+			max-width: (9/12)*100%;
+			flex: 0 0 (9/12)*100%;
+		}
+	}
+	
+	@include media-breakpoint-up(md) {
+		.section-content {
+			margin-left: (1/12)*100%;
+			max-width: (6/12)*100%;
+			flex-basis: (6/12)*100%;
+		}
+	}
+}

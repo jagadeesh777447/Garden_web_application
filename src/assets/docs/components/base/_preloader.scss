@@ -1,0 +1,62 @@
+// Preloader
+
+.preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	z-index: 10000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background: $secondary;
+	transition: .3s all ease;
+
+	.components-ready & {
+		opacity: 0;
+		visibility: hidden;
+	}
+}
+
+
+// Custom Styles
+.cssload-container{
+	display: block;
+	width: 100px;
+}
+
+.cssload-loader {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100px;
+	height: 100px;
+	background: $primary;
+	border-radius: 50%;
+}
+
+.cssload-loader:before{
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	border: 20px solid $secondary;
+	border-radius: 50%;
+	animation: cssload-loader 1.15s infinite;
+}
+
+
+@keyframes cssload-loader {
+	70%{
+		width: 100px;
+		height: 100px;
+	}
+
+	100%{
+		width: 100px;
+		height: 100px;
+		border-width: 0;
+	}
+}

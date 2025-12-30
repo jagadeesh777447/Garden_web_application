@@ -1,0 +1,34 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+.google-map {
+	color: #616161;
+	padding-bottom: 100%;
+	border-radius: $border-radius;
+	box-shadow: $box-shadow;
+	width: 100%;
+
+	img {
+		margin-top: 0;
+		vertical-align: top;
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(md) {
+	.google-map {
+		padding-bottom: 81.33%;
+	}
+}
+
+@media ( orientation: portrait ) {
+	.google-map {
+		padding-bottom: 50%;
+	}
+}

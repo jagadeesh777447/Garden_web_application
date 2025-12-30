@@ -1,0 +1,51 @@
+
+#btnPdfGenerator{
+	display:none;
+}
+#priceQuote,thead{
+    border:1px solid black;
+
+}
+#divPdfconverter{
+ width:100%;
+}
+
+label{
+	padding-top: 7px;
+	padding-left: 2px; 
+	font-size: 18px;
+	font-family:Arial, Helvetica, sans-serif;
+}	
+
+
+span,small{
+	font-size:18px;
+	
+}
+
+
+#adrs_A{border-style: none;
+ 
+}
+ #thfrspn{font-weight: normal;} 
+#spnPsd{
+font-size: 18px;
+}
+strong
+{
+	font-size: 17px;
+	font-weight: bold;
+	}
+
+#AmountTblID{margin-top:5px;}
+
+/* ading css for th */
+#thdrA{ border:1px solid black;} 
+#thdrB{border:1px solid black;font-size:18px;text-align:center;font-family:Arial, Helvetica, sans-serif;}
+table tbody td{border:1px solid black;}
+ table th{padding-right: 4px; }
+/* adding border for th */
+#ttlID{border:1px solid black;}
+#spndateDIV{padding-left: 215px;}
+#cstmrTable{margin-top: -34px;}
+

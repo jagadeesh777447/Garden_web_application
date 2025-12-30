@@ -1,0 +1,19 @@
+.shower {
+    font-size: 16px;
+    line-height: 16px;
+    height: 81px;
+    overflow: hidden;
+}
+
+.btn-round.btn-lg, .btn-group-lg > .btn-round.btn {
+    border-radius: 3.25rem;
+    cursor: pointer;
+}
+ 
+.mat-mdc-dialog-surface .mdc-dialog__surface{
+    text-align: justify !important;
+}
+
+.mdc-dialog__container{
+    text-align: justify !important; 
+}

@@ -1,0 +1,42 @@
+include ../layer/_layer
+include ../blurb/_blurb
+
+// About
+section.section.section-4.position-relative.overflow-hidden( style='background-color: #00ABE1' )
+	.section-layer: +layer-4
+	.container
+		.row.row-30.row-md-50.align-items-center.justify-content-center
+			.col-xs-8.col-lg-6.section-content-2( data-animate!={
+				in: { class: 'fadeInUpBig', delay: '.3s' },
+				out: { class: 'fadeOutUpBig', delay: '.3s' } } )
+				h2 A Few Words About Bonobomb Zoo
+				p Our zoo is the largest and oldest zoological garden established in 1920. The animals located at Bonobomb Zoo are grouped according to their geographic territories, with species that live together peacefully in the wild placed in exhibits together here at the zoo.
+				.row.row-15.row-sm-20.row-md-40.row-xl-50
+					.col-6.col-md-4
+						+blurb-inline({
+							alignY: 'align-items-center',
+							embed: '<span class="blurb-icon linearicons-paw"></span>',
+							title: 'Exotic Animals'
+						})
+					.col-6.col-md-4
+						+blurb-inline({
+							alignY: 'align-items-center',
+							embed: '<span class="blurb-icon linearicons-shield-check"></span>',
+							title: 'Animal Safety'
+						})
+					.col-6.col-md-4
+						+blurb-inline({
+							alignY: 'align-items-center',
+							embed: '<span class="blurb-icon linearicons-tree"></span>',
+							title: 'Zoological Garden'
+						})
+					.col-6.col-md-12
+						a.btn.btn-round.btn-lg.btn-primary.btn-anis( href='#' ) Learn more
+			.col-xs-4.col-lg-6.col-xl-5.col-xxl-6.section-content-2( data-animate!={
+				in: { class: 'fadeIn', delay: '.8s', duration: '.7s' },
+				out: { class: 'fadeOut', delay: '0s', duration: '.4s' } } )
+				.ml-xxl-4
+					article.video-play.embed-responsive.embed-responsive-16by9
+						video.video( src='videos/video.mp4', controls, poster='videos/video.jpg', data-btn='.video-btn-1' )
+						button.video-btn.video-btn-1.play
+

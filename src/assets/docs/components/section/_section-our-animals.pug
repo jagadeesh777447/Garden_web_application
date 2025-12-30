@@ -1,0 +1,74 @@
+include ../layer/_layer
+
+// Our animals
+section.section.section-6.position-relative.overflow-hidden( style='background-color: #DB5151' )
+	.section-layer: +layer-6
+	.container-wide.text-center( style='max-width: none', data-animate!={
+		in: { class: 'fadeInUp', delay: '.7s', duration: '.7s' },
+		out: { class: 'fadeOutUp', delay: '0s', duration: '.4s' } } )
+		h2 Our Animals
+		// Swiper slider
+		.swiper-container.swiper-gallery( data-lightgallery, data-swiper= {
+			loop: false,
+			slidesPerView: 3,
+			spaceBetween: 20,
+			centeredSlides: true,
+			breakpoints: {
+				480: {
+					slidesPerView: 6
+				},
+				768: {
+					slidesPerView: 4
+				},
+				992: {
+					slidesPerView: 6
+				},
+				1200: {
+					slidesPerView: 7
+				}
+			}
+		})
+			// Additional required wrapper
+			.swiper-wrapper
+				// Slides
+				.swiper-slide
+					.swiper-gallery-item
+						a.swiper-gallery-figure.lightgallery-item( href='images/image-5-1200x800.jpg' )
+							+img( 'image-5-400x500' ).swiper-gallery-image
+				.swiper-slide
+					.swiper-gallery-item
+						a.swiper-gallery-figure.lightgallery-item( href='images/image-6-1067x800.jpg' )
+							+img( 'image-6-400x500' ).swiper-gallery-image
+				.swiper-slide
+					.swiper-gallery-item
+						a.swiper-gallery-figure.lightgallery-item( href='images/image-7-1200x800.jpg' )
+							+img( 'image-7-400x500' ).swiper-gallery-image
+				.swiper-slide
+					.swiper-gallery-item
+						a.swiper-gallery-figure.lightgallery-item( href='images/image-8-1200x800.jpg' )
+							+img( 'image-8-400x500' ).swiper-gallery-image
+				.swiper-slide
+					.swiper-gallery-item
+						a.swiper-gallery-figure.lightgallery-item( href='images/image-9-1200x800.jpg' )
+							+img( 'image-9-400x500' ).swiper-gallery-image
+				.swiper-slide
+					.swiper-gallery-item
+						a.swiper-gallery-figure.lightgallery-item( href='images/image-10-1200x800.jpg' )
+							+img( 'image-10-400x500' ).swiper-gallery-image
+				.swiper-slide
+					.swiper-gallery-item
+						a.swiper-gallery-figure.lightgallery-item( href='images/image-11-533x800.jpg' )
+							+img( 'image-11-400x500' ).swiper-gallery-image
+
+			// Navigation nav
+			.swiper-nav
+				.swiper-button-prev
+				.swiper-dot
+				.swiper-dot
+				svg.swiper-progress( x='0px', y='0px', width='100', height='100', viewbox='0 0 100 100' )
+					circle.swiper-progress-bg( cx='50', cy='50', r='50' )
+					circle.swiper-progress-dot( cx='50', cy='50', r='14' )
+					circle.clipped( cx='50', cy='50', r='48' )
+				.swiper-dot
+				.swiper-dot
+				.swiper-button-next

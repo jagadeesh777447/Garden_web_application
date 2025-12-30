@@ -1,0 +1,83 @@
+
+
+  
+  input[type=text],input[type=email],input[type=number],textarea, select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 4px 0;
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  /* .nanda{
+    border: 2px solid #f30c0c !important;
+  } */
+
+  .close{
+    margin-left: 5px;
+  }
+  textarea{
+    height: 100px;
+  }
+  ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color:    white;
+  }
+  :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:   white;
+   opacity:  1;
+  }
+  ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:   white;
+   opacity:  1;
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color:   white;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+   color:   white;
+  }
+  
+  ::placeholder { /* Most modern browsers support this now. */
+   color:   white;
+  }
+  p{
+    color: red;
+    margin-top: -2px;
+    text-align: initial;
+  }
+  .input-error {
+    border: red 2px solid  !important;
+}
+.is-invalid{
+  border: red 1px solid;
+}
+:host {
+  display: block;
+  background: #fff;
+  padding: 16px;
+}
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  border-radius:5px;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: black;
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: black;
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: black;
+}
+@keyframes custom-dialog-enter {
+  from {
+    transform: scale(0) rotate(360deg);
+  }
+
+  to {
+    transform: none;
+  }
+}

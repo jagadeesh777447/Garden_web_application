@@ -1,0 +1,44 @@
+.dropdown-toggle,
+.dropdown-menu {
+    cursor: pointer;
+}
+
+.img {
+    max-height: 50px;
+    border: 2px solid white;
+    display: inline;
+
+}
+
+.rd-navbar-fullwidth .navbar-navigation-root-link::before {
+
+    background: #FF7A00;
+}
+
+:ng-deep .rd-navbar-fullwidth .navbar-navigation-root-item .active a {
+    content: '';
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 4px;
+    opacity: 0;
+    height: 4px;
+    border-radius: 4px;
+    pointer-events: none;
+    transition: .2s ease-in-out;
+    background: #FF7A00;
+}
+
+.rd-navbar-fullwidth .navbar-navigation-root-item.activeelement .navbar-navigation-root-link::before {
+    content: '';
+    position: absolute;
+    top: calc(100% + 5px);
+    left: 0;
+    width: 20px;
+    opacity: 1;
+    height: 4px;
+    border-radius: 4px;
+    pointer-events: none;
+    transition: .2s ease-in-out;
+    background: #FF7A00;
+}

@@ -1,0 +1,2 @@
+.google-map {	color: #616161;	padding-bottom: 100%;	border-radius: 0.3125rem;	box-shadow: 0 0 30px rgba(0, 0, 0, 0.25);	width: 100%;}.google-map img {	margin-top: 0;	vertical-align: top;}@media (min-width: 768px) {	.google-map {		padding-bottom: 81.33%;	}}@media (orientation: portrait) {	.google-map {		padding-bottom: 50%;	}}
+/*# sourceMappingURL=google-map.css.map */

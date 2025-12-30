@@ -1,0 +1,89 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../base/mixins";
+@import "../bootstrap/scss/mixins";
+
+
+// Base
+.video-play {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	&::after {
+		position: absolute;
+		content: '';
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		background-color: rgba(29, 29, 29, 0.2);
+		pointer-events: none;
+		border-radius: 5px;
+	}
+}
+
+.video {
+	object-fit: cover;
+	border-radius: 5px;
+}
+
+.video-btn {
+	position: absolute;
+	overflow: hidden;
+	display: flex;
+	padding: 1px;
+	border-radius: 50%;
+	font-size: px-to-rem( 60px );
+	line-height: 1;
+	color: $white;
+	transition: $transition-base;
+	z-index: 1;
+
+	&::before {
+		font-family: 'Linearicons';
+	}
+
+	&.play::before {
+		content: '\ec6a';
+	}
+
+	&.pause {
+		opacity: 0;
+
+		&::before {
+			content: '\ec6b';
+		}
+	}
+}
+
+
+// Contexts
+.desktop {
+	.video-btn.pause {
+		opacity: 0;
+	}
+
+	.video-play:hover {
+		.video-btn.pause {
+			opacity: 1;
+		}
+	}
+
+	.video-btn.play:hover {
+		opacity: .7;
+	}
+}
+
+
+// Media
+@media ( orientation: landscape ) {
+	@include media-breakpoint-between(xs, sm) {
+		.video-btn {
+			font-size: px-to-rem( 40px );
+		}
+	}
+}

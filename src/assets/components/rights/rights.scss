@@ -1,0 +1,19 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+
+
+// Base
+.rights {
+	font-size: 16px;
+	color: rgba( $white, .6 );
+}
+
+.rights-link {
+	color: inherit;
+
+	&:hover {
+		color: $primary;
+	}
+}

@@ -1,0 +1,106 @@
+<section class="section section-3 position-relative overflow-hidden" style="background-color: #00BCB1">
+  <div class="section-layer">
+    <!-- Layer-->
+    <svg class="layer layer-1" width="1487" height="1032" viewBox="0 0 1487 1032" fill="none">
+      <path class="layer-item-1" d="M581 0H1281L701 929H0L581 0Z" fill="white" fill-opacity="0.1"></path>
+      <path class="layer-item-2" d="M685.929 648H975L735.484 1032H446L685.929 648Z" fill="white" fill-opacity="0.1">
+      </path>
+      <path class="layer-item-3" d="M1364.5 0L949.5 668.5H1075L1487 0H1364.5Z" fill="#FFD600"></path>
+      <path class="layer-item-4" d="M720.763 386L432 852H519.325L806 386H720.763Z" fill="#FFD600"></path>
+      <path class="layer-item-5" d="M1184.5 124L1071 308H1105.32L1218 124H1184.5Z" fill="#FFD600"></path>
+      <path class="layer-item-6" d="M713.826 552.669L715.524 553.726L604.023 732.859L602.325 731.802L713.826 552.669Z"
+        fill="white"></path>
+      <path class="layer-item-7"
+        d="M883.826 552.669L885.524 553.726L621.304 978.212L619.607 977.155C722.791 811.383 780.642 718.441 883.826 552.669Z"
+        fill="white"></path>
+      <path class="layer-item-8" opacity="0.4"
+        d="M923.826 502.669L925.524 503.726C822.34 669.498 764.488 762.44 661.304 928.212L659.607 927.155L923.826 502.669Z"
+        fill="white"></path>
+      <path class="layer-item-9" opacity="0.4"
+        d="M933.826 502.669L935.524 503.726C832.34 669.498 774.488 762.44 671.304 928.212L669.607 927.155L933.826 502.669Z"
+        fill="white"></path>
+      <path class="layer-item-10"
+        d="M1413.83 132.669L1415.52 133.726L1304.02 312.859L1302.33 311.802C1345.87 241.846 1370.28 202.625 1413.83 132.669Z"
+        fill="white"></path>
+      <path class="layer-item-11"
+        d="M1423.83 132.669L1425.52 133.726C1381.98 203.682 1357.57 242.903 1314.02 312.859L1312.33 311.802L1423.83 132.669Z"
+        fill="white"></path>
+      <path class="layer-item-12"
+        d="M1233.83 69.6693L1235.52 70.7261L1076.99 325.418L1075.29 324.361C1137.2 224.898 1171.92 169.132 1233.83 69.6693Z"
+        fill="white"></path>
+    </svg>
+  </div>
+  <div class="container" id="style-4" style="height: 600px; overflow-y:scroll; margin-top: 100px;">
+    <div class="row justify-content-between ">
+      <h2 class="text-center d-mobile-landscape-none ms-5 " style="margin-left: 100px;">Blog</h2>
+      <div class="sort-by dropdown" style="margin-right: 100px;">
+
+        <select class="options ms-2" [(ngModel)]="selectedValue" (change)="onDropdownChange()">
+          <option [value]="undefined">All Categories</option>
+          <option class="dropdown-item option" *ngFor="let option of categoryBlog" [value]="option.CategoryName">{{
+            option.CategoryName }}</option>
+        </select>
+
+      </div>
+    </div>
+
+
+    <div class="row  section-row" *ngIf="!contentLoaded">
+      <div class="price" style="width: 350px;">
+
+        <ngx-skeleton-loader class="skeleton"
+          [theme]="{height: '200px','margin-bottom':'10px','margin-left':'5px','border-radius': '10px','background-color': '#00BCB1',border: '1px solid white '}">
+        </ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          [theme]="{ height: '50px','margin-bottom':'10px','border-radius': '10px','background-color': '#00BCB1',border: '1px solid white '}">
+        </ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          [theme]="{height: '50px','margin-right': '15px','border-radius': '10px','background-color': '#00BCB1',border: '1px solid white '}"></ngx-skeleton-loader>
+
+      </div>
+      <div class="price" style="width: 350px">
+
+        <ngx-skeleton-loader class="skeleton"
+          [theme]="{height: '200px','margin-bottom':'10px','margin-left':'5px','border-radius': '10px','background-color': '#00BCB1',border: '1px solid white '}">
+        </ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          [theme]="{ height: '50px', 'border-radius': '10px','margin-bottom':'10px','background-color': '#00BCB1',border: '1px solid white '}">
+        </ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          [theme]="{height: '50px','margin-right': '15px','border-radius': '10px','background-color': '#00BCB1',border: '1px solid white '}"></ngx-skeleton-loader>
+
+      </div>
+
+      <div class="price" style="width: 350px">
+
+        <ngx-skeleton-loader class="skeleton"
+          [theme]="{height: '200px','margin-bottom':'10px','margin-left':'5px','border-radius': '10px','background-color': '#00BCB1',border: '1px solid white '}">
+        </ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          [theme]="{ height: '50px', 'border-radius': '10px','margin-bottom':'10px','background-color': '#00BCB1',border: '1px solid white '}">
+        </ngx-skeleton-loader>
+        <ngx-skeleton-loader
+          [theme]="{height: '50px','margin-right': '15px','border-radius': '10px','background-color': '#00BCB1',border: '1px solid white '}"></ngx-skeleton-loader>
+
+      </div>
+    </div>
+    <div class="row  section-row">
+      <article class="price col-lg-6 mt-2" *ngFor="let item of items">
+        <img src="{{imageUrl}}Content/BlogImages/{{item.Image}}"
+          onerror="this.src='/assets/images/Product_Img_Unavailable.jpg';" (click)="blogTitle(item.Title)" alt=""
+          class="image">
+        <div class="price-title  h5" (click)="blogTitle(item.Title)">{{item.Title}}</div>
+        <p>{{item.ShortDescription.substring(0,128)}}..</p>
+        <p>{{item.PublishDate | date}}</p>
+      </article>
+      <article class="price col-lg-4 mt-2" hidden>
+        <img src="" alt="" class="image">
+        <div class="price-title text-center d-flex h5">Test</div>
+        <div class="price-title h6">TeluguName</div>
+        <div class="price-text"></div><a class="btn btn-outline btn-block btn-round price-btn"
+          routerLink="/productDetail">View Details</a>
+      </article>
+
+    </div>
+  </div>
+</section>

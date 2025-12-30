@@ -1,0 +1,112 @@
+include ../blurb/_blurb
+
+// Features
+section.section.section-lg.bg-transparent
+	.container
+		.row.row-30
+			.col-lg-6( data-animate!={ class: 'fadeInLeft' } )
+				.sticky.sticky-top
+					h1 Even more
+						| #[br.d-none.d-lg-block]
+						| features available
+					p Take a look at an extensive list of features
+						| #[br.d-none.d-lg-block]
+						| that our template has to offer.
+			.col-lg-6
+				.tab
+					ul.nav.nav-classic( role='tablist', data-animate!={ class: 'fadeInRight' } )
+						li.nav-item
+							a.nav-link.h4.active( data-toggle='tab', href='#navClassic2-1', role='tab', aria-selected='true' ) Design
+						li.nav-item
+							a.nav-link.h4( data-toggle='tab', href='#navClassic2-2', role='tab', aria-selected='false' ) Development
+					.tab-content
+						#navClassic2-1.tab-pane.fade.show.active( role='tabpanel' )
+							.row.row-30
+								.col-6.col-xs-4.col-md-3.col-lg-4( data-animate!={ class: 'fadeInUp' } )
+									+blurb-small({
+										embed: '<span class="blurb-icon ith-devices"></span>',
+										title: 'Based on Bootstrap 4'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4( data-animate!={ class: 'fadeInUp' } )
+									+blurb-small({
+										embed: '<span class="blurb-icon ith-slider"></span>',
+										title: 'Sliders and carousels'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4( data-animate!={ class: 'fadeInUp' } )
+									+blurb-small({
+										embed: '<span class="blurb-icon ith-parallax"></span>',
+										title: 'Parallax'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4( data-animate!={ class: 'fadeInUp' } )
+									+blurb-small({
+										embed: '<span class="blurb-icon ith-layout-header"></span>',
+										title: 'Lots of header layouts'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4( data-animate!={ class: 'fadeInUp' } )
+									+blurb-small({
+										embed: '<span class="blurb-icon ith-layout-footer"></span>',
+										title: 'A variety of footer layouts'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4( data-animate!={ class: 'fadeInUp' } )
+									+blurb-small({
+										embed: '<span class="blurb-icon ith-smile"></span>',
+										title: 'Icon fonts'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4( data-animate!={ class: 'fadeInUp' } )
+									+blurb-small({
+										embed: '<span class="blurb-icon ith-video"></span>',
+										title: 'Video background'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4( data-animate!={ class: 'fadeInUp' } )
+									+blurb-small({
+										embed: '<span class="blurb-icon ith-layout"></span>',
+										title: '26 child themes'
+									})
+
+						#navClassic2-2.tab-pane.fade( role='tabpanel' )
+							.row.row-30
+								.col-6.col-xs-4.col-md-3.col-lg-4
+									+blurb-small({
+										embed: '<span class="blurb-icon icon-secondary ith-slider"></span>',
+										title: 'Revolution slider'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4
+									+blurb-small({
+										embed: '<span class="blurb-icon icon-secondary ith-carousel"></span>',
+										title: 'Owl carousel'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4
+									+blurb-small({
+										embed: '<span class="blurb-icon icon-secondary ith-calendar"></span>',
+										title: 'Event calendar'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4
+									+blurb-small({
+										embed: '<span class="blurb-icon icon-secondary ith-mail"></span>',
+										title: 'Mail form'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4
+									+blurb-small({
+										embed: '<span class="blurb-icon icon-secondary ith-recaptcha"></span>',
+										title: 'ReCaptcha'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4
+									+blurb-small({
+										embed: '<span class="blurb-icon icon-secondary ith-monkey"></span>',
+										title: 'Mailchimp'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4
+									+blurb-small({
+										embed: '<span class="blurb-icon icon-secondary ith-ball"></span>',
+										title: 'Animate CSS, WOW animation'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4
+									+blurb-small({
+										embed: '<span class="blurb-icon icon-secondary ith-search"></span>',
+										title: 'Search form'
+									})
+								.col-6.col-xs-4.col-md-3.col-lg-4
+									+blurb-small({
+										embed: '<span class="blurb-icon icon-secondary ith-gallery"></span>',
+										title: 'Gallery (Isotope) (hover effects)'
+									})

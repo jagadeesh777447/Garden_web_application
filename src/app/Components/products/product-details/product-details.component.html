@@ -1,0 +1,75 @@
+<section class="section section-7 position-relative overflow-hidden mb-5" style="background-color: #415ADE">
+  <div class="section-layer">
+    <!-- Layer-->
+    <svg class="layer layer-7" width="1920" height="1080" viewBox="0 0 1920 1080" fill="none">
+      <path class="layer-item-1" d="M1114 1H1814L1234 930H533L1114 1Z" fill="white" fill-opacity="0.1"></path>
+      <path class="layer-item-2" d="M270.929 696H560L320.484 1080H31L270.929 696Z" fill="white" fill-opacity="0.1">
+      </path>
+      <path class="layer-item-3" d="M283.358 623L0 1080H85.6902L367 623H283.358Z" fill="#FFD600"></path>
+      <path class="layer-item-4" d="M1183.69 729L1081 894H1112.05L1214 729H1183.69Z" fill="#FFD600"></path>
+      <path class="layer-item-5" d="M1772.61 412L1358 1081H1483.38L1895 412H1772.61Z" fill="#FFD600"></path>
+      <path class="layer-item-6" d="M636.826 654.669L638.524 655.726L374.304 1080.21L372.607 1079.16L636.826 654.669Z"
+        fill="white"></path>
+      <path class="layer-item-7" opacity="0.4"
+        d="M1413.83 654.669L1415.52 655.726L1151.3 1080.21L1149.61 1079.16L1413.83 654.669Z" fill="white"></path>
+      <path class="layer-item-8" opacity="0.4"
+        d="M1423.83 654.669L1425.52 655.726L1161.3 1080.21L1159.61 1079.16L1423.83 654.669Z" fill="white"></path>
+      <path class="layer-item-9"
+        d="M336.826 632.669L338.524 633.726L227.023 812.859L225.325 811.802C268.869 741.846 293.282 702.625 336.826 632.669Z"
+        fill="white"></path>
+      <path class="layer-item-10" d="M346.826 632.669L348.524 633.726L237.023 812.859L235.325 811.802L346.826 632.669Z"
+        fill="white"></path>
+    </svg>
+  </div>
+  <div class="container topspace " id="scrollContainer">
+    <div class=" text-center scrollbar" id="style-4" style="height: 600px; overflow-y:scroll;"
+      data-animate='{"in":{"class":"fadeInUp","delay":".7s","duration":".7s"},"out":{"class":"fadeOutUp","delay":"0s","duration":".4s"}}'>
+      <div class="card ">
+        <div class=" price">
+          <div class="row ">
+            <div class="col-4">
+              <div class="card">
+                <ngx-skeleton-loader appearance="circle" *ngIf="!contentLoaded"
+                  [theme]="{width: '280px', height: '200px', 'border-radius': '10px','margin-right': '15px','background-color': '#415ADE',border: '1px solid white '}">
+                </ngx-skeleton-loader>
+                <img class="Image" src="{{imageUrl}}{{pruductDetail.Image}}"
+                  onerror="this.src='/assets/images/Product_Img_Unavailable.jpg';" alt="{{pruductDetail.title}}">
+              </div>
+            </div>
+            <div class="col-lg-6 col-sm-12" style="text-align: initial;">
+              <ngx-skeleton-loader count="3" *ngIf="!contentLoaded"
+                [theme]="{height: '50px','margin-right': '15px','background-color': '#415ADE',border: '1px solid white '}"></ngx-skeleton-loader>
+              <h3>{{pruductDetail.title}}/{{pruductDetail.TeluguName}}</h3>
+              <div class="">
+                <p class="me-2 mt-3"><b style="margin-right: 5px;">Category Name:</b>{{pruductDetail.categoryName}}</p>
+                <p><b style="margin-right: 5px;">Tag:</b>{{pruductDetail.title}},{{pruductDetail.SEOKeywords}}</p>
+              </div>
+              <h6 class="mb-2">Available sizes</h6>
+              <div *ngFor="let item of pruductDetail.sizelist">
+                <hr>
+                <p>{{item.ProductSize}} Inch</p>
+              </div>
+            </div>
+            <div class="col-lg-2 ">
+              <a class="btn btn-round btn-lg btn-primary btn-anis text-nowrap form"
+                (click)="openEnquiry(productId)">Enquiry Form</a>
+              <a class="btn btn-round btn-lg btn-primary btn-anis text-nowrap" routerLink="/products">Back to
+                Products</a>
+            </div>
+          </div>
+          <div style="text-align: initial; margin-top: 15px;">
+            <p><b>Product Description</b></p>
+            <div id="contentContainer" [innerHTML]="pruductDetail.htmlDescription"></div>
+            <p></p>
+          </div>
+          <h3>Related Products</h3>
+          <div class="row">
+            <img *ngFor="let group of pruductDetail.RelatedProducts" (click)="productrelated(group.Title)"
+              title="{{group.Title}}" class="me-5 image col-3" src="{{imageUrl}}{{group.Image}}"
+              onerror="this.src='/assets/images/Product_Img_Unavailable.jpg';" width="200px">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

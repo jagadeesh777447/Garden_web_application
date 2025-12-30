@@ -1,0 +1,41 @@
+include _navigation
+include ../rights/_rights
+
+mixin rd-navbar
+	//RD Navbar
+	header.section.rd-navbar-wrap
+		nav.rd-navbar&attributes( attributes )
+			.navbar-container
+				.navbar-cell
+					.navbar-panel
+						button.navbar-switch.int-hamburger.novi-icon( data-multi-switch!= {
+							targets: '.rd-navbar',
+							scope:   '.rd-navbar',
+							isolate: '[data-multi-switch]'
+						})
+
+						.navbar-logo
+							a.navbar-logo-link( href= homePage.link )
+								+img( logo.default ).navbar-logo-default( alt= logo.name )
+
+				.navbar-cell.navbar-sidebar
+					+navigation( menu )
+					+rights.navbar-rights.py-3.d-block.d-xl-none
+
+				.navbar-cell
+					.navbar-subpanel
+						.navbar-subpanel-item
+							button.navbar-button.navbar-info-button.mdi-dots-vertical( data-multi-switch!= {
+								targets: '.rd-navbar',
+								scope: '.rd-navbar',
+								class: 'navbar-info-active',
+								isolate: '[data-multi-switch]'
+							})
+							.navbar-info
+								a.navbar-info-link( href='tel:#' )
+									span.navbar-info-icon.mdi-phone
+									span.navbar-info-text=' +1 800 559 35 48'
+								a.navbar-info-link( href='mailto:#' )
+									span.navbar-info-icon.mdi-email-outline
+									span.navbar-info-text=' info@demolink.org'
+								a.btn.btn-round.btn-primary.btn-anis.navbar-action-button( href='#' ) Donate

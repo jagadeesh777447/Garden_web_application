@@ -1,0 +1,121 @@
+<section class="section section-8 position-relative overflow-hidden"
+  style="background-color: #44AA4E; padding-top: 100px;">
+  <div class="section-layer">
+    <!-- Layer-->
+    <svg class="layer layer-8" width="1920" height="1080" viewBox="0 0 1920 1080" fill="none">
+      <path class="layer-item-1" d="M1119 0H1819L1239 929H538L1119 0Z" fill="white" fill-opacity="0.1"></path>
+      <path class="layer-item-2" d="M275.929 696H565L325.484 1080H36L275.929 696Z" fill="white" fill-opacity="0.1">
+      </path>
+      <path class="layer-item-3" d="M1850.57 -1L1181 1079H1383.48L2048.21 -1H1850.57Z" fill="#FFD600"></path>
+      <path class="layer-item-4" d="M287.219 618L0 1080.93H86.8577L372 618H287.219Z" fill="#FFD600"></path>
+      <path class="layer-item-5" d="M1020.69 225L918 390H949.054L1051 225H1020.69Z" fill="#FFD600"></path>
+      <path class="layer-item-6"
+        d="M1740.83 137.669L1742.52 138.726L1478.3 563.212L1476.61 562.155C1579.79 396.383 1637.64 303.441 1740.83 137.669Z"
+        fill="white"></path>
+      <path class="layer-item-7" opacity="0.4"
+        d="M1413.83 657.669L1415.52 658.726L1151.3 1083.21L1149.61 1082.16C1252.79 916.383 1310.64 823.441 1413.83 657.669Z"
+        fill="white"></path>
+      <path class="layer-item-8" opacity="0.4"
+        d="M1423.83 657.669L1425.52 658.726C1322.34 824.498 1264.49 917.44 1161.3 1083.21L1159.61 1082.16L1423.83 657.669Z"
+        fill="white"></path>
+      <path class="layer-item-9"
+        d="M1106.83 665.669L1108.52 666.726L997.023 845.859L995.325 844.802C1038.87 774.846 1063.28 735.625 1106.83 665.669Z"
+        fill="white"></path>
+      <path class="layer-item-10"
+        d="M1116.83 665.669L1118.52 666.726C1074.98 736.682 1050.57 775.903 1007.02 845.859L1005.33 844.802L1116.83 665.669Z"
+        fill="white"></path>
+    </svg>
+  </div>
+  <div class="container-wide section-content-2 scrollbar" id="style-4"
+    style="height: 600px; overflow-y:scroll; margin-top: 50px;">
+    <div class="container">
+      <div class="row row-30 align-items-center ">
+        <div class="col-xs-6 col-lg-5 col-md-6 col-xl-4 col-xxl-5 section-content-2"
+          data-animate='{"in":{"class":"fadeInUpBig","delay":".3s"},"out":{"class":"fadeOutUpBig","delay":".3s"}}'>
+          <h2>Get In Touch</h2>
+          <form class="rd-mailform" [formGroup]="contactForm" #formGroupRef="ngForm" (ngSubmit)="  onSubmit()">
+            <div class="form-group">
+              <div class="position-relative">
+                <input class="form-control" type="text" name="name" placeholder="Your name" formControlName="fullname" autocomplete="off">
+                <p *ngIf="contactForm.get('fullname')?.hasError('required') &&
+              (contactForm.get('fullname')?.dirty || formGroupRef.submitted)">
+                  Name is required
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="position-relative">
+                <input class="form-control" type="email" name="email" placeholder="E-mail" formControlName="email" autocomplete="off">
+                <p *ngIf="contactForm.get('email')?.hasError('required') &&
+              (contactForm.get('email')?.dirty || formGroupRef.submitted)">
+                  Email is required
+                </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="position-relative">
+                <input class="form-control" name="tel" placeholder="Phone" (keypress)="keyPress($event)" minlength=10 maxlength=10 type="text" formControlName="mobileNumber" autocomplete="off">
+                <p *ngIf="contactForm.get('mobileNumber')?.hasError('minlength')">
+                  Enter minimum 10 numbers
+                </p>
+                <p *ngIf="contactForm.get('mobileNumber')?.hasError('required') &&
+                (contactForm.get('mobileNumber')?.dirty || formGroupRef.submitted)">
+                    Mobile Number is required
+                  </p>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="position-relative">
+                <textarea class="form-control" name="question" placeholder="Message" formControlName="messages" autocomplete="off"></textarea>
+                <p *ngIf="contactForm.get('messages')?.hasError('required') &&
+              (contactForm.get('messages')?.dirty || formGroupRef.submitted)">
+                  Discription is required
+                </p>
+              </div>
+            </div>
+            <!-- <div class="row  form-group mt-3">
+              <div class="col-sm-12 mb-2" >
+                <re-captcha  [(ngModel)]="captchaResponse" (resolved)="resolved($event)"
+                siteKey="6LdKVNESAAAAADR2kG7HS49tM8x8FYMtZlcQSywl" formControlName="recaptchaReactive" id="recaptcha" name="recaptcha"  ></re-captcha>
+               
+              </div>   
+            </div> -->
+            <div class="row  form-group mt-3">
+              <div class="col-sm-12 mb-2" >
+                <re-captcha  [(ngModel)]="captchaResponse" (resolved)="resolved($event)"
+                siteKey="6LcuJ8gUAAAAAGm8iFaJossdfpN_aLBtvL8rVv0H" formControlName="recaptchaReactive" id="recaptcha" name="recaptcha"  ></re-captcha>
+               
+              </div>   
+            </div>
+            <button class="btn btn-round btn-primary btn-anis" type="submit">Send Message</button>
+          </form>
+        </div>
+        <div class="form-output snackbar snackbar-primary" id="form-output-global"></div>
+        <div class="col-xs-6 col-lg-7 section-content-2"
+          data-animate='{"in":{"class":"fadeInRightBig","delay":".8s","duration":".7s"},"out":{"class":"fadeOutRightBig","delay":"0s","duration":".4s"}}'>
+          <div class="card ">
+            <div class=" price">
+              <h5> <span class="fa fa-map-marker" style="margin-right: 20px;"></span>{{contentDescription?.address}}
+              </h5>
+              <h5> <span class="fa fa-envelope" style="margin-right: 20px;"></span>{{contentDescription?.Email}}</h5>
+              <h5> <span class="fa fa-phone" style="margin-right: 20px;"></span>{{contentDescription?.OwnerName}} :
+                {{contentDescription?.Phone}}</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-3">
+      <div class="row section-content-2"
+      data-animate='{"in":{"class":"fadeInRightBig","delay":".8s","duration":".7s"},"out":{"class":"fadeOutRightBig","delay":"0s","duration":".4s"}}'>
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d60731.24973691497!2d83.31213016275788!3d17.945996256658688!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a3be1d96815e917%3A0x643739e30367d250!2sParameswara%20Gardens!5e0!3m2!1sen!2sin!4v1605156034670!5m2!1sen!2sin"
+        style="width: 100%; height:350px; border:0;" frameborder="0" allowfullscreen=""></iframe>
+    </div>
+    </div>
+   
+  </div>
+
+  <!-- Google map-->
+
+</section>

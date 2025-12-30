@@ -1,0 +1,19 @@
+include ../layer/_layer
+
+// Section Giraffe
+section.section.section-2.position-relative.overflow-hidden( style='background-color: #FFC700' )
+	.section-layer: +layer-2
+	.container-wide
+		.row.row-30.section-row
+			.col-xs-8.col-sm-7.col-md-6.section-content( data-animate!={
+				in: { class: 'fadeInUpBig', delay: '.3s' },
+				out: { class: 'fadeOutUpBig', delay: '.3s' } } )
+				h1 Huge Territory with over 3,000 Animals
+				p.lead Our zoo occupies almost 750 acres and is home to more than 3,000 animals representing over 500 different species. Of this population, more than 40 species are classified as endangered.
+				.offset-md.group-20.group-md-30
+					a.btn.btn-round.btn-lg.btn-primary.btn-anis( href='#' ) Buy Ticket
+					a.btn.btn-outline.btn-round.btn-lg.btn-anis( href='#' ) Learn More
+			.col-xs-4.col-sm-5.col-md-6.position-static.d-flex.justify-content-center.px-0.section-figure
+				+img( 'image-2-719x981.png' ).section-image( data-animate!={
+					in: { class: 'slideInUp', delay: '.8s', duration: '.7s' },
+					out: { class: 'slideOutDown', delay: '0s', duration: '.4s' } } )

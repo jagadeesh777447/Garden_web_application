@@ -1,0 +1,17 @@
+//- Price
+	@param {object} data - data object
+	@param {string} data.embed - class for icon
+	@param {string} data.title - price title
+	@param {string} data.text - price text
+mixin price( data )
+	// Price
+	article.price&attributes( attributes )
+		.price-title.h3= data.title
+		ul.price-list
+			each item in data.lists
+				li.price-list-item
+					span!= item.text
+					strong= item.value
+		hr.divider.divider-sm.price-divider
+		.price-text!= data.text
+		a.btn.btn-outline.btn-block.btn-round.price-btn( href='#' ) Buy a Ticket

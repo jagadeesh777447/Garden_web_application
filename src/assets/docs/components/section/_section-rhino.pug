@@ -1,0 +1,19 @@
+include ../layer/_layer
+
+// Section Iguana
+section.section.section-3.position-relative.overflow-hidden( style='background-color: #00BCB1' )
+	.section-layer: +layer-1
+	.container-wide
+		.row.row-30.section-row
+			.col-xs-8.col-sm-7.col-md-6.section-content( data-animate!={
+				in: { class: 'fadeInUpBig', delay: '.3s' },
+				out: { class: 'fadeOutUpBig', delay: '.3s' } } )
+				h1 An Unforgettable Experience
+				p.lead Besides exploring our botanical garden and discovering animals at our zoo, we also have plenty of places to eat and drink, play, and shop to make your day extra special!
+				.offset-md.group-20.group-md-30
+					a.btn.btn-round.btn-lg.btn-primary.btn-anis( href='#' ) Buy Ticket
+					a.btn.btn-outline.btn-round.btn-lg.btn-anis( href='#' ) Learn More
+			.col-xs-4.col-sm-5.col-md-6.position-static.d-flex.align-items-center.justify-content-center.px-0.section-figure
+				+img( 'image-3-938x827.png' ).section-image( data-animate!={
+					in: { class: 'slideInRight', delay: '.8s', duration: '.7s' },
+					out: { class: 'slideOutRight', delay: '0s', duration: '.4s' } } )

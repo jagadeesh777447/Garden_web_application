@@ -1,0 +1,59 @@
+include ../layer/_layer
+include ../blurb/_blurb
+
+// Plan your visit
+section.section.section-5.position-relative.overflow-hidden( style='background-color: #774CBE' )
+	.section-layer: +layer-5
+	.container
+		.row.row-30.section-row
+			.col-xs-8.col-md-6.section-content-2( data-animate!={
+				in: { class: 'fadeInUpBig', delay: '.3s' },
+				out: { class: 'fadeOutUpBig', delay: '.3s' } } )
+				h2 Plan Your Visit
+				.owl-carousel.owl-style-2( data-owl= {
+					items: 1,
+					margin: 30,
+					dots: true,
+					loop: false,
+					mouseDrag: false,
+					autoplay: false,
+					responsive: {
+						1200: {
+							items: 2
+						}
+					}
+				})
+					.row.row-30.row-xxl-50
+						.col-6.col-xl-12
+							+blurb({
+								embed: '<span class="blurb-icon linearicons-paw"></span>',
+								title: 'Opening Hours',
+								text: 'We are open until 5:30pm. Last entry is 1 hour before closing.'
+							}).blurb-morphing
+								+blob-morphing
+						.col-6.col-xl-12
+							+blurb({
+								embed: '<span class="blurb-icon linearicons-bubbles"></span>',
+								title: 'Animal Talks',
+								text: 'Our team helps you to discover great things about our animals.'
+							}).blurb-morphing
+								+blob-morphing
+					.row.row-30.row-xxl-50
+						.col-6.col-xl-12
+							+blurb({
+								embed: '<span class="blurb-icon linearicons-users"></span>',
+								title: 'Group Discounts',
+								text: 'Get discounts up to 50% off if you bring 10 or more visitors.'
+							}).blurb-morphing
+								+blob-morphing
+						.col-6.col-xl-12
+							+blurb({
+								embed: '<span class="blurb-icon linearicons-calendar-31"></span>',
+								title: 'Upcoming Events',
+								text: 'Each month we have something new to offer our visitors.'
+							}).blurb-morphing
+								+blob-morphing
+			.col-xs-4.col-md-6.position-static.d-flex.justify-content-center.px-0.section-figure
+				+img( 'image-4-662x900.png' ).section-image( data-animate!={
+					in: { class: 'slideInUp', delay: '.8s', duration: '.7s' },
+					out: { class: 'slideOutDown', delay: '0s', duration: '.4s' } } )

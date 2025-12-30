@@ -1,0 +1,27 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* @import url(./assets/components/base/base.css) */
+  .ngx-pagination {
+  
+    background: white;
+    margin-top: 30px;
+    border-radius: 5px;
+    
+}
+.mat-mdc-dialog-container .mdc-dialog__surface {
+  display: block;
+  width: 1200px;
+  height: 400px;
+  
+}
+.cdk-global-scrollblock {
+  overflow-y: hidden;
+}
+
+.mat-mdc-dialog-surface .mdc-dialog__surface{
+  text-align: justify !important;
+}
+
+.mdc-dialog__container{
+  text-align: justify !important; 
+}

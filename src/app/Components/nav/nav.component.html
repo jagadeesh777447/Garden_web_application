@@ -1,0 +1,58 @@
+<header class="section rd-navbar-wrap">
+  <nav class="rd-navbar">
+    <div class="navbar-container">
+      <div class="navbar-cell">
+        <div class="navbar-panel">
+          <button class="navbar-switch int-hamburger novi-icon"
+            data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","isolate":"[data-multi-switch]"}'></button>
+          <div class="navbar-logo"><a class="navbar-logo-link" routerLink="/"><img class="navbar-logo-default"
+                src="./assets/images/logo.png" alt="paradise garden" width="153" height="40" /></a></div>
+        </div>
+      </div>
+      <div class="navbar-cell navbar-sidebar ">
+        <ul class="navbar-navigation rd-navbar-nav fullpage-navigation ">
+
+          <li class="navbar-navigation-root-item " [class.activeelement]="activeTab === 'home'"><a
+              class="navbar-navigation-root-link" (click)="setActiveTab('home')" routerLink="/">Home</a>
+          </li>
+          <li class="navbar-navigation-root-item " [class.activeelement]="activeTab === 'about'"><a
+              class="navbar-navigation-root-link" (click)="setActiveTab('about')" routerLink="/about">About</a>
+          </li>
+          <li class="navbar-navigation-root-item " [class.activeelement]="activeTab === 'categories'"><a
+              class="navbar-navigation-root-link" (click)="setActiveTab('categories')"
+              routerLink="/categories">Categories</a>
+          </li>
+          <li class="navbar-navigation-root-item " [class.activeelement]="activeTab === 'products'"><a
+              class="navbar-navigation-root-link" (click)="setActiveTab('products')" routerLink="/products">Products</a>
+          </li>
+          <li class="navbar-navigation-root-item " [class.activeelement]="activeTab === 'gallery'"><a
+              class="navbar-navigation-root-link" (click)="setActiveTab('gallery')" routerLink="/gallery">Gallery</a>
+          </li>
+          <li class="navbar-navigation-root-item " [class.activeelement]="activeTab === 'blog'"><a
+              class="navbar-navigation-root-link" (click)="setActiveTab('blog')" routerLink="/blog">Blog</a>
+          </li>
+          <li class="navbar-navigation-root-item " [class.activeelement]="activeTab === 'contact'"><a
+              class="navbar-navigation-root-link" (click)="setActiveTab('contact')" routerLink="/contact">ContactUs</a>
+          </li>
+
+        </ul>
+        <!-- Copyright-->
+        <p class="rights navbar-rights py-3 d-block d-xl-none"><span>&copy;
+            {{currentYear}}&nbsp;</span><span>Technoxis</span><span>. All rights reserved</span></p>
+      </div>
+      <div class="navbar-cell">
+        <div class="navbar-subpanel">
+          <div class="navbar-subpanel-item">
+            <button class="navbar-button navbar-info-button mdi-dots-vertical"
+              data-multi-switch='{"targets":".rd-navbar","scope":".rd-navbar","class":"navbar-info-active","isolate":"[data-multi-switch]"}'></button>
+            <div class="navbar-info"><a class="navbar-info-link" href="tel:#"><span
+                  class="navbar-info-icon mdi-phone"></span><span class="navbar-info-text">
+                  {{contentDescription?.Phone}}</span></a><a class="navbar-info-link" href="mailto:#"><span
+                  class="navbar-info-icon mdi-email-outline"></span><span class="navbar-info-text">
+                  {{contentDescription?.Email}}</span></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>

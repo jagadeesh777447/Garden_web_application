@@ -1,0 +1,122 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Variables
+$person-primary: $primary;
+$person-secondary: $secondary;
+$person-dark: $gray-900;
+$person-title-fsz: $h4-font-size;
+$person-icon-fsz: $person-title-fsz;
+
+
+// Base
+.price {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	max-width: 270px;
+	margin-left: auto;
+	margin-right: auto;
+	padding: px-to-rem( 20px );
+	background: #5870ED;
+	box-shadow: 0 0 15px rgba($black, 0.12);
+	border-radius: $border-radius;
+
+	> * {
+		width: 100%;
+	}
+}
+
+.price-title {
+	text-align: center;
+}
+
+.price-list {
+	flex-grow: 1;
+}
+
+.price-list-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	@include groupX( 15px );
+}
+
+
+// Spacing
+* + .price-list {
+	margin-top: px-to-rem( 17px );
+}
+
+* + .price-list-item {
+	margin-top: px-to-rem( 0 );
+}
+
+* + .price-divider {
+	margin-top: px-to-rem( 17px );
+}
+
+* + .price-text {
+	margin-top: px-to-rem( 20px );
+}
+
+* + .price-btn {
+	margin-top: px-to-rem( 20px );
+}
+
+
+// Media
+@include media-breakpoint-up(md) {
+	.price {
+		padding: px-to-rem( 20px ) px-to-rem( 25px ) px-to-rem( 40px );
+	}
+
+	* + .price-list {
+		margin-top: px-to-rem( 24px );
+	}
+
+	* + .price-list-item {
+		margin-top: px-to-rem( 17px );
+	}
+
+	* + .price-text {
+		margin-top: px-to-rem( 34px );
+	}
+
+	* + .price-btn {
+		margin-top: px-to-rem( 35px );
+	}
+}
+
+@include media-breakpoint-up(xl) {
+	.price {
+		box-shadow: $box-shadow-2;
+	}
+}
+
+@media screen and (device-aspect-ratio: 812/375) {
+	.price {
+		padding: px-to-rem( 20px );
+	}
+
+	* + .price-list {
+		margin-top: px-to-rem( 17px );
+	}
+
+	* + .price-list-item {
+		margin-top: px-to-rem( 0 );
+	}
+
+	* + .price-text {
+		margin-top: px-to-rem( 20px );
+	}
+
+	* + .price-btn {
+		margin-top: px-to-rem( 20px );
+	}
+}

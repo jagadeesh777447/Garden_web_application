@@ -1,0 +1,84 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../base/mixins";
+
+
+// Base
+.blurb-embed {
+	font-size: px-to-rem( 30px );
+	line-height: 1;
+
+	.blurb-number {
+		color: inherit;
+	}
+}
+
+.blurb-svg {
+	width: 2.143em;
+	height: auto;
+}
+
+
+// Spacing
+* + .blurb {
+	margin-top: px-to-rem( 40px );
+}
+
+* + .blurb-title {
+	margin-top: px-to-rem( 30px );
+}
+
+* + .blurb-text {
+	margin-top: px-to-rem( 10px );
+}
+
+* + .blurb-embed {
+	margin-top: px-to-rem( 30px );
+}
+
+
+// Blurb morphing
+.blurb-morphing {
+	.blurb-embed {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+
+	.blurb-icon {
+		position: absolute;
+	}
+
+	* + .blurb-title {
+		margin-top: 4px;
+	}
+}
+
+
+// Contexts
+.desktop {
+	.blurb-modern:hover {
+		border-color: transparent;
+		box-shadow: $box-shadow-sm;
+		transform: translateY(-10px);
+	}
+}
+
+
+// Media
+@include media-breakpoint-up(md) {
+	font-size: px-to-rem( 40px );
+
+	* + .blurb {
+		margin-top: px-to-rem( 55px );
+	}
+}
+
+@include media-breakpoint-up(lg) {
+	.blurb-embed {
+		font-size: px-to-rem( 56px );
+	}
+}

@@ -1,0 +1,20 @@
+extends ../assets/components/base/_skeleton
+include ../assets/components/rd-navbar/_rd-navbar
+
+block variables
+	- pageName = 'Home';
+
+block page
+	+rd-navbar
+
+	.fullpage
+		include ../assets/components/section/_section-iguana
+		include ../assets/components/section/_section-giraffe
+		include ../assets/components/section/_section-rhino
+		include ../assets/components/section/_section-about
+		include ../assets/components/section/_section-plan-your-visit
+		include ../assets/components/section/_section-our-animals
+		include ../assets/components/section/_section-ticket-prices
+		include ../assets/components/section/_section-contacts
+
+	include ../assets/components/footer/_footer-default

@@ -1,0 +1,62 @@
+.text {
+  color: black;
+  padding: 10px;
+}
+
+.close {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.modal-box{
+  text-align:center;
+  margin-top: 30px;
+}
+
+:host {
+  padding: 16px;
+  max-width: 100%;
+  animation: custom-dialog-enter 1s ease;
+  text-align: justify;
+}
+
+
+.custom-dialog-container {
+  background-color: rgba(0, 0, 0, 0.8); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60%; 
+}
+
+
+.custom-dialog-container .mdc-dialog__surface {
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 80%; 
+  overflow: hidden;
+}
+
+
+.custom-dialog-container .mat-dialog-title {
+  background-color: #2196F3; 
+  color: #fff; 
+}
+
+.custom-dialog-container .mat-dialog-content {
+  padding: 16px;
+}
+
+
+.custom-dialog-container .mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+
+.custom-dialog-container .mat-dialog-title .mat-icon-button {
+  color: #fff;
+}
+
+
+
+

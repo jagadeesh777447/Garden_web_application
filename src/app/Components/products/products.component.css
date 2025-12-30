@@ -1,0 +1,68 @@
+/*
+ *  STYLE 4
+ */
+
+#style-4::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar {
+  width: 10px;
+  background-color: #F5F5F5;
+}
+
+#style-4::-webkit-scrollbar-thumb {
+  background-color: #415ADE;
+  border: 2px solid #555555;
+}
+
+.image {
+  max-height: 200px;
+  min-height: 200px;
+  min-width: 250px;
+  cursor: pointer;
+}
+
+.price-title {
+  width: 100%;
+  cursor: pointer;
+}
+
+.price {
+  max-width: 300px;
+
+}
+
+.options {
+  cursor: pointer;
+  width: 150px;
+  min-height: 30px;
+  max-height: 300px;
+  border-radius: 15px;
+  background-color: rgb(250, 250, 250);
+  transition: all 300ms;
+}
+
+.options.opened {
+  overflow-y: scroll;
+}
+
+.option {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+  transition: all 300ms;
+}
+
+.option:nth-child(1) {
+  border-radius: 15px;
+}
+
+.option:hover {
+  background-color: brown;
+  color: black;
+}

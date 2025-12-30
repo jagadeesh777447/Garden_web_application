@@ -1,0 +1,21 @@
+@import "../bootstrap/scss/functions";
+@import "../base/functions";
+@import "../base/variables";
+@import "../bootstrap/scss/variables";
+@import "../bootstrap/scss/mixins";
+@import "../bootstrap/scss/utilities/position";
+@import "../base/mixins";
+
+
+// Base
+.section-banner {
+	display: flex;
+	justify-content: center;
+	background-position: center right;
+	background-size: cover;
+
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}

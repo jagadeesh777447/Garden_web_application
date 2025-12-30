@@ -1,0 +1,34 @@
+//- Blurb
+	@param {object} obj - data object
+	@param {string} obj.embed - class for icon
+	@param {string} obj.title - blurb title
+	@param {string} obj.text - blurb text
+mixin blurb( obj )
+	// Blurb
+	article.blurb&attributes( attributes )
+		.blurb-embed!= obj.embed
+			if block
+				block
+		.blurb-title.h6= obj.title
+		if( obj.text )
+			.blurb-text= obj.text
+
+//- Blurb inline
+	@param {object} obj - data object
+	@param {string} obj.embed - class for icon
+	@param {string} obj.title - blurb title
+	@param {string} obj.text - blurb text
+mixin blurb-inline( obj )
+	// Blurb
+	article.blurb&attributes( attributes )
+		.media.media-xs( class= obj.alignY )
+			.media-left
+				.blurb-embed!= obj.embed
+			.media-body
+				.blurb-title.h6= obj.title
+				if( obj.text )
+					.blurb-text= obj.text
+
+mixin blob-morphing
+	svg.blob-morphing.blurb-svg(width='120', height='120', viewBox='0 0 120 120', fill='none')
+		path(d='M37.0096 23.0069C21.3087 29.8865 0.000244141 36.7659 0.000244141 60.8441C0.000244141 84.9223 41.4956 110.147 65.047 107.854C88.5985 105.561 112.15 79.1894 115.514 59.6976C118.879 40.2057 104.299 27.5932 86.3555 18.4206C68.4115 9.24789 52.7106 16.1274 37.0096 23.0069Z', fill='#FFD600')
