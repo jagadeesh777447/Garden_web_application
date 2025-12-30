@@ -32,7 +32,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy dist files'
   inputs:
-    SourceFolder: 'dist'
+    SourceFolder: 'dist/client'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
