@@ -5,10 +5,10 @@ trigger:
       - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  name: Default   # 👈 self-hosted agent pool
 
 variables:
-  nodeVersion: '18.x'
+  nodeVersion: '20.x'
 
 steps:
 # Install Node.js
