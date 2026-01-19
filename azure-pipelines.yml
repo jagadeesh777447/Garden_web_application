@@ -5,37 +5,30 @@ pool:
   name: mycomputeragent
 
 variables:
-  buildConfiguration: Release
-  
+  nodeVersion: '18.x'
+
 steps:
-# Install Node.js
 - task: NodeTool@0
-  displayName: 'Install Node.js'
+  displayName: Install Node.js
   inputs:
-    versionSpec: $(nodeVersion)
+    versionSpec: '$(nodeVersion)'
 
-# Install Angular CLI + dependencies
 - script: |
-    npm install -g @angular/cli
     npm install
-  displayName: 'Install dependencies'
+  displayName: Install dependencies
 
-# Build Angular app
 - script: |
-    ng build --configuration production
-  displayName: 'Build Angular App'
+    npm run build
+  displayName: Build Angular App
 
-# Copy dist files to artifact staging
 - task: CopyFiles@2
-  displayName: 'Copy dist files'
   inputs:
-    SourceFolder: 'dist/client'
+    SourceFolder: 'dist'
     Contents: '**'
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
-# Publish artifact
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Angular Artifact'
   inputs:
-    PathtoPublish: '$(Build.ArtifactStagingDirectory)'
-    ArtifactName: 'angular-drop'
+    pathToPublish: '$(Build.ArtifactStagingDirectory)'
+    artifactName: 'angular-drop'
+
