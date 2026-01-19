@@ -1,15 +1,12 @@
 trigger:
-  branches:
-    include:
-      - main
-      - master
+- main
 
 pool:
-  name: mycomputeragent   # 👈 self-hosted agent pool
+  name: mycomputeragent
 
 variables:
-  nodeVersion: '20.x'
-
+  buildConfiguration: Release
+  
 steps:
 # Install Node.js
 - task: NodeTool@0
