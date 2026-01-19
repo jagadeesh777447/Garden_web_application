@@ -30,18 +30,28 @@ stages:
     - script: npm run build
       displayName: Build Angular App
 
-    # IMPORTANT: copy ONLY dist/client
+    # Copy ONLY dist/client (correct Angular output)
     - task: CopyFiles@2
       displayName: Copy Angular build output
       inputs:
         SourceFolder: 'dist/client'
         Contents: '**'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/site'
+
+    # Zip for Azure App Service (BEST PRACTICE)
+    - task: ArchiveFiles@2
+      displayName: Zip Angular files
+      inputs:
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/site'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: '$(Build.ArtifactStagingDirectory)/angular.zip'
+        replaceExistingArchive: true
 
     - task: PublishPipelineArtifact@1
       displayName: Publish Angular Artifact
       inputs:
-        targetPath: '$(Build.ArtifactStagingDirectory)'
+        targetPath: '$(Build.ArtifactStagingDirectory)/angular.zip'
         artifact: $(artifactName)
 
 # ================= DEPLOY TO STAGING =================
@@ -50,6 +60,7 @@ stages:
   dependsOn: Build
   jobs:
   - job: DeployStaging
+    displayName: Deploy to Staging Slot
     steps:
     - download: current
       artifact: angular-drop
@@ -61,7 +72,7 @@ stages:
         appType: webApp
         appName: GardenApp
         slotName: staging
-        package: '$(Pipeline.Workspace)/angular-drop'
+        package: '$(Pipeline.Workspace)/angular-drop/angular.zip'
 
 # ================= DEPLOY TO PRODUCTION (APPROVAL + ROLLBACK SAFE) =================
 - stage: Deploy_Production
@@ -71,7 +82,7 @@ stages:
   jobs:
   - deployment: SwapSlots
     displayName: Swap Staging to Production
-    environment: production   # 🔐 APPROVAL REQUIRED HERE
+    environment: production   # 🔐 Manual approval here
 
     strategy:
       runOnce:
