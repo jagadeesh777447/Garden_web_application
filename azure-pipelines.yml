@@ -1,37 +1,88 @@
-
 trigger:
   branches:
     include:
       - main
+
 pool:
   name: mycomputeragent
 
 variables:
   nodeVersion: '18.x'
-  
-steps:
-- task: NodeTool@0
-  displayName: Install Node.js
-  inputs:
-    versionSpec: '$(nodeVersion)'
+  artifactName: 'angular-drop'
 
-- script: |
-    npm install
-  displayName: Install dependencies
-
-- script: |
-    npm run build
+# ================= BUILD STAGE =================
+stages:
+- stage: Build
   displayName: Build Angular App
+  jobs:
+  - job: BuildJob
+    displayName: Angular Build
+    steps:
 
-- task: CopyFiles@2
-  displayName: Copy dist files
-  inputs:
-    SourceFolder: 'dist'
-    Contents: '**'
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    - task: NodeTool@0
+      displayName: Install Node.js
+      inputs:
+        versionSpec: '$(nodeVersion)'
 
-- task: PublishBuildArtifacts@1
-  displayName: Publish Angular Artifact
-  inputs:
-    pathToPublish: '$(Build.ArtifactStagingDirectory)'
-    artifactName: 'angular-drop'
+    - script: npm install
+      displayName: Install dependencies
+
+    - script: npm run build
+      displayName: Build Angular App
+
+    # IMPORTANT: copy ONLY dist/client
+    - task: CopyFiles@2
+      displayName: Copy Angular build output
+      inputs:
+        SourceFolder: 'dist/client'
+        Contents: '**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
+    - task: PublishPipelineArtifact@1
+      displayName: Publish Angular Artifact
+      inputs:
+        targetPath: '$(Build.ArtifactStagingDirectory)'
+        artifact: $(artifactName)
+
+# ================= DEPLOY TO STAGING =================
+- stage: Deploy_Staging
+  displayName: Deploy Angular to Staging
+  dependsOn: Build
+  jobs:
+  - job: DeployStaging
+    steps:
+    - download: current
+      artifact: angular-drop
+
+    - task: AzureWebApp@1
+      displayName: Deploy Angular to STAGING slot
+      inputs:
+        azureSubscription: AzureServiceConnection
+        appType: webApp
+        appName: GardenApp
+        slotName: staging
+        package: '$(Pipeline.Workspace)/angular-drop'
+
+# ================= DEPLOY TO PRODUCTION (APPROVAL + ROLLBACK SAFE) =================
+- stage: Deploy_Production
+  displayName: Deploy to Production
+  dependsOn: Deploy_Staging
+
+  jobs:
+  - deployment: SwapSlots
+    displayName: Swap Staging to Production
+    environment: production   # 🔐 APPROVAL REQUIRED HERE
+
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - task: AzureAppServiceManage@0
+            displayName: Swap Staging to Production
+            inputs:
+              azureSubscription: AzureServiceConnection
+              resourceGroupName: GardenApp_group-972c
+              action: Swap Slots
+              webAppName: GardenApp
+              sourceSlot: staging
+              targetSlot: production
