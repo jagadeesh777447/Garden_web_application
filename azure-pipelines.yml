@@ -5,7 +5,7 @@ trigger:
       - master
 
 pool:
-  name: Default   # 👈 self-hosted agent pool
+  name: mycomputeragent   # 👈 self-hosted agent pool
 
 variables:
   nodeVersion: '20.x'
