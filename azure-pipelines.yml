@@ -48,24 +48,23 @@ stages:
 
 # ================= DEPLOY TO STAGING =================
 - stage: Deploy_Staging
-  displayName: Deploy to Staging
+  displayName: Deploy Angular to Staging
   dependsOn: Build
   jobs:
   - job: DeployStaging
-    displayName: Deploy Angular to Staging Slot
     steps:
-
     - download: current
-      artifact: $(artifactName)
+      artifact: angular-drop
 
     - task: AzureWebApp@1
-      displayName: Deploy to STAGING slot
+      displayName: Deploy Angular to STAGING slot
       inputs:
         azureSubscription: AzureServiceConnection
         appType: webApp
         appName: GardenApp
         slotName: staging
-        package: '$(Pipeline.Workspace)/$(artifactName)/**'
+        package: '$(Pipeline.Workspace)/angular-drop/dist'
+
 
 # ================= DEPLOY TO PRODUCTION (APPROVAL) =================
 - stage: Deploy_Production
