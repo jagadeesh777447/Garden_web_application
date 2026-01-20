@@ -36,13 +36,13 @@ stages:
       inputs:
         SourceFolder: 'dist/client'
         Contents: '**'
-        TargetFolder: '$(Build.ArtifactStagingDirectory)/site'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)/site/wwwroot'
 
     # Zip for Azure App Service (BEST PRACTICE)
     - task: ArchiveFiles@2
       displayName: Zip Angular files
       inputs:
-        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/site'
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)/site/wwwroot'
         includeRootFolder: false
         archiveType: zip
         archiveFile: '$(Build.ArtifactStagingDirectory)/angular.zip'
