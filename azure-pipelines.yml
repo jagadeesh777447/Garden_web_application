@@ -70,7 +70,7 @@ stages:
       inputs:
         azureSubscription: AzureServiceConnection
         appType: webApp
-        appName: gardenangular
+        appName: gardenAngular
         slotName: staging
         package: '$(Pipeline.Workspace)/angular-drop/angular.zip'
 
@@ -94,6 +94,6 @@ stages:
               azureSubscription: AzureServiceConnection
               resourceGroupName: gardenangular_group
               action: Swap Slots
-              webAppName: gardenangular
+              webAppName: gardenAngular
               sourceSlot: staging
               targetSlot: production
