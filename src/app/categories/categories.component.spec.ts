@@ -1,18 +1,21 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { CategoriesComponent } from './categories.component';
 
 describe('CategoriesComponent', () => {
   let component: CategoriesComponent;
-  let fixture: ComponentFixture<CategoriesComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [CategoriesComponent]
-    });
-    fixture = TestBed.createComponent(CategoriesComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
+  beforeAll(() => {
+    (window as any).LoadingFromComponent = () => {};
+  });
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [CategoriesComponent],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA]
+    }).compileComponents();
+
+    component = TestBed.createComponent(CategoriesComponent).componentInstance;
   });
 
   it('should create', () => {
