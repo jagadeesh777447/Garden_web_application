@@ -26,6 +26,10 @@ stages:
 
     - script: npm install
       displayName: Install dependencies
+      
+    # 🔹 RUN UNIT TESTS (QUALITY GATE)
+    - script: npm run test -- --watch=false --browsers=ChromeHeadless
+      displayName: Run Angular Unit Tests
 
     - script: npm run build
       displayName: Build Angular App
