@@ -28,8 +28,8 @@ stages:
     - script: npm install
       displayName: Install dependencies
 
-    - script: npm run test -- --watch=false --browsers=ChromeHeadless --code-coverage
-      displayName: Run Angular Unit Tests with Coverage
+    - script: npm run test -- --watch=false --browsers=ChromeHeadless
+      displayName: Run Angular Unit Tests
 
 
 # ================= BUILD STAGE =================
