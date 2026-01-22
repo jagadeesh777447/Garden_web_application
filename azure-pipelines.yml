@@ -31,13 +31,6 @@ stages:
     - script: npm run test -- --watch=false --browsers=ChromeHeadless --code-coverage
       displayName: Run Angular Unit Tests with Coverage
 
-    - task: PublishCodeCoverageResults@1
-      displayName: Publish Code Coverage Report
-      inputs:
-        codeCoverageTool: 'Cobertura'
-        summaryFileLocation: 'coverage/**/cobertura-coverage.xml'
-        reportDirectory: 'coverage'
-
 
 
 # ================= BUILD STAGE =================
