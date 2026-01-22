@@ -32,7 +32,6 @@ stages:
       displayName: Run Angular Unit Tests with Coverage
 
 
-
 # ================= BUILD STAGE =================
 - stage: Build
   displayName: Build Angular App
