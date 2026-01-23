@@ -28,7 +28,7 @@ stages:
     - script: npm install
       displayName: Install dependencies
 
-    - script: npm run test -- --watch=false --browsers=ChromeHeadless
+    - script: npm run test -- --watch=false --browsers=ChromeHeadless --code-coverage
       displayName: Run Angular Unit Tests
 
 
